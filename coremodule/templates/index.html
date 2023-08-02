@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<style>
+    button{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+        text-align: center;
+        width: 19%;
+    }
+    .githubprojectview {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+     }
+</style>
+<body>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+      
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+      
+              <h3 class="mb-4 pb-2 fw-normal">Weather Forecast App</h3>
+              <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-group rounded mb-3">
+                  <input type="search" class="form-control rounded" placeholder="Enter The City" name="city"/>
+                </div>            
+                <button type="submit">Check</button>
+              </form>
+              <br><br>
+              
+              <div class="card shadow-0 border">
+                <div class="card-body p-4">
+      
+                  <h4 class="mb-1 sfw-normal">{{ weatherdb.city }}</h4>
+                  <br>
+                  <p class="mb-2">Weather: <strong>{{ weatherdb.weather }} </strong>( {{ weatherdb.weatherdes}} )</p>
+                  <p>Current temperature: <strong>{{ weatherdb.temp }}°C</strong></p>
+                  <p>Feels like: <strong>{{ weatherdb.feels_like }}°C</strong></p>
+                  <p>Max: <strong>{{ weatherdb.temp_max }}°C</strong>, Min: <strong>{{ weatherdb.temp_min }}°C°C</strong></p>
+                  <p>Wind Speed: <strong>{{ weatherdb.wind }}m/s</strong></p>
+                  <p>pressure: <strong>{{ weatherdb.pressure }}Hg</strong></p>
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+          <a href="https://github.com/riz4d/WeatherApp" class="githubprojectview"><i class="fa fa-github"></i> View Project On Github</a>
+        </div>
+      </section>
+</body>
+</html>

@@ -1,0 +1,3 @@
+requests
+Django==4.0.4
+djangorestframework==3.13.1
